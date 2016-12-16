@@ -1,10 +1,33 @@
 int heartbeat = 0;
 int blinkStatus = 0;
 
+/*
+ * Temperature sensor: NTC with ~100k at 20 deg C.
+ * NTC is connected to GND and sensorPin.
+ * A 100k pullup is connected to sensorPin and VCC.
+ */
 int sensorPin = A4;
+
+/*
+ * The Arduino onboard LED is used as heartbeat.
+ */
 int heartbeatPin = 13;
+
+/*
+ * The button LED. Note that it is inverted: Writing HIGH turns it off,
+ * writing LOW turns it on.
+ */
 int ledPin = 5;
+
+/*
+ * The relais controlling the heatbed. HIGH -> heatbed on, LOW -> heatbed off.
+ */
 int relaisPin = 7;
+
+/*
+ * Button input. Reads LOW (0) in off/cool position
+ * and HIGH (1) in on/heat.
+ */
 int buttonPin = 3;
 
 int wantHeat = 0;
